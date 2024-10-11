@@ -1,0 +1,41 @@
+p.verso{
+
+    color: blue;
+ 
+ }
+
+p.mote{
+
+    color: red;
+
+}
+
+a:link {
+    color: blue;
+  }
+  
+  /* link visitado */
+  a:visited {
+    color: purple;
+  }
+  
+  /* mouse em cima do link  */
+  a:hover {
+    color: blue;
+  }
+  
+  /* link selecionado */
+  a:active {
+    color: darkblue;
+  }
+  .poeta img {
+    border-radius: 50%;
+    width: 15%;
+}
+body {
+  background-color: rgb(255, 244, 179);
+ }
+ 
+
+
+
