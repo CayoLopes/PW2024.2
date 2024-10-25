@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body class="fundo">
+      <div id="meu_amor">
+         <button id="botaoCarregar">Carregar Tabela de Bebidas</button>
+         <button id="botaoOrdenar">Ordenar Bebidas</button>
+         <button id="botaoEmbaralhar">Embaralhar Bebidas</button> <!-- Novo botão de embaralhamento -->
+      </div>            
+   </body>   
+   <script>
+      let bebidas = ["Absinto", "Cachaça", "Vinho", "Whisky", "Tequila", "Saquê"];
+      
+      function transformar(item) {
+         return `<tr><td>${item}</td></tr>`;
+      }
+      
+      function carregarDiv() {
+         let div = document.getElementById("meu_amor");
+         let bebidasHtml = bebidas.map(transformar).join("\n"); 
+         div.innerHTML = `
+            <table>
+               <thead>
+                  <tr><th>Bebidas</th></tr>
+               </thead>
+               <tbody>
+                  ${bebidasHtml}
+               </tbody>
+            </table>
+            <button id="botaoCarregar">Carregar Tabela de Bebidas</button>
+            <button id="botaoOrdenar">Ordenar Bebidas</button>
+            <button id="botaoEmbaralhar">Embaralhar Bebidas</button>
+         `;
+         
+         document.getElementById("botaoCarregar").addEventListener("click", carregarDiv); 
+         document.getElementById("botaoOrdenar").addEventListener("click", ordenarBebidas);
+         document.getElementById("botaoEmbaralhar").addEventListener("click", embaralharBebidas); 
+      }
+      
+      function ordenarBebidas() {
+         bebidas.sort();
+         carregarDiv();
+      }
+      
+      function embaralharBebidas() {
+         bebidas.sort(() => Math.random() - 0.5); // Embaralha o array com comparação aleatória
+         carregarDiv();
+      }
+      
+      let botao = document.getElementById("botaoCarregar");
+      botao.addEventListener("click", carregarDiv);                 
+   </script>
+</html>
