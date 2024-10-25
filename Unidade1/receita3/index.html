@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Link para o arquivo CSS separado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Div do botão, onde temos o botão que o usuário pode clicar -->
+    <div id="divBotao">
+        <!-- Botão que o usuário vai clicar para carregar ou apagar a cerveja -->
+        <button id="botaoCarregar">Carregar/Apagar cervejas...</button>
+    </div>
+
+    <!-- Div que será exibida ou escondida com efeito fade -->
+    <div id="divCerveja" class="hidden"></div>
+
+    <script>
+        // Função que será executada quando o botão for clicado
+        function carregarDiv() {
+            // Seleciona a div com o id "divCerveja"
+            let divCerveja = document.getElementById("divCerveja");
+
+            // Verifica se a div está oculta
+            if (divCerveja.classList.contains("hidden")) {
+                // Se está oculta, adiciona o conteúdo "Guinness" e aplica a classe "visible" para o fade in
+                divCerveja.innerHTML = `<h1>Guinness</h1>`;
+                divCerveja.classList.remove("hidden");
+                divCerveja.classList.add("visible");
+            } else {
+                // Se está visível, aplica a classe "hidden" para o fade out e limpa o conteúdo após a transição
+                divCerveja.classList.remove("visible");
+                divCerveja.classList.add("hidden");
+
+                // Espera o tempo da transição (1 segundo) antes de remover o conteúdo
+                setTimeout(() => {
+                    divCerveja.innerHTML = "";
+                }, 1000); // 1000ms = 1 segundo
+            }
+        }
+
+        // Seleciona o botão com o id "botaoCarregar"
+        let botao = document.getElementById("botaoCarregar");
+
+        // Adiciona um evento de clique ao botão
+        botao.addEventListener("click", carregarDiv);
+    </script>
+</body>
+
+</html>

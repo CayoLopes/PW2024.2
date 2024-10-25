@@ -1,0 +1,10 @@
+.hidden {
+    opacity: 0;
+    transition: opacity 1s ease-out; /* Duração da transição de 1 segundo */
+}
+
+/* Classe para div visível com opacidade 1 */
+.visible {
+    opacity: 1;
+    transition: opacity 1s ease-in; /* Duração da transição de 1 segundo */
+}
