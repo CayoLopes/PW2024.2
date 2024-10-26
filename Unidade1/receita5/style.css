@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Estilos da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    color: #007BFF;
+}
+th {
+    background-color: #f2f2f2; /* Cor de fundo do cabeçalho */
+}
+tr:hover {
+    background-color: #f1f1f1; /* Cor de destaque ao passar o mouse */
+}
+
+
+button:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}

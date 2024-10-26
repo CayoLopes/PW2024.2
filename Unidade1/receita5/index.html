@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>   
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css"> 
+   </head>
+   
+   <body>
+      <div>
+         <a href="#" id="linkCarregar">Carregar Bebidas</a>
+         <a href="#" id="linkOrdenar">Mostrar Bebidas Ordenadas</a>
+         <a href="#" id="linkEmbaralhar">Embaralhar Bebidas</a>
+      </div>
+      <div id="meuAmor"></div>            
+   </body>   
+   
+   <script>
+      let bebidas = ["Absinto", "Cachaça", "Vinho", "Whisky", "Tequila", "Saquê"];
+      
+      const carregarDiv = (bebs) => {
+         const div = document.getElementById("meuAmor");
+         const tabelaHtml = `
+            <table>
+               <thead>
+                  <tr>
+                     <th>Bebidas</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  ${bebs.map(item => `<tr><td>${item}</td></tr>`).join("\n")}
+               </tbody>
+            </table>`;
+         div.innerHTML = tabelaHtml;
+      }
+
+      const ordenarBebidas = () => {
+         const bebidasOrdenadas = [...bebidas].sort(); // Clona e ordena o array
+         carregarDiv(bebidasOrdenadas); // Carrega a tabela com as bebidas ordenadas
+      }
+
+      const embaralharBebidas = () => {
+         const bebidasEmbaralhadas = [...bebidas].sort(() => Math.random() - 0.5); // Embaralha o array
+         carregarDiv(bebidasEmbaralhadas); // Carrega a tabela com as bebidas embaralhadas
+      }
+      
+      let linkCarregar = document.getElementById("linkCarregar");
+      let linkOrdenar = document.getElementById("linkOrdenar");
+      let linkEmbaralhar = document.getElementById("linkEmbaralhar"); // Referência para o novo link
+
+      // Adiciona eventos de clique nos links
+      linkCarregar.addEventListener("click", (event) => {
+         event.preventDefault(); // Impede o comportamento padrão do link
+         carregarDiv(bebidas);
+      });
+      linkOrdenar.addEventListener("click", (event) => {
+         event.preventDefault(); // Impede o comportamento padrão do link
+         ordenarBebidas();
+      });
+      linkEmbaralhar.addEventListener("click", (event) => {
+         event.preventDefault(); // Impede o comportamento padrão do link
+         embaralharBebidas();
+      });
+   </script>
+</html>
