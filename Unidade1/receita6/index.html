@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">   
+   <head>
+      <meta charset="UTF-8">
+      <title>Lista de Cervejas</title>
+      <link rel="stylesheet" href="style.css"> <!-- Link para o CSS externo -->
+   </head>
+
+   <body>
+      <div>
+         <button id="botaoCarregar" aria-label="Carregar lista de cervejas">Carregar Cervejas</button>
+      </div>
+      <div id="cervejasDiv"></div>            
+   </body>   
+
+   <script>
+      const cervejas = [
+         { name: "Guiness", alcohol: "10%", style: "Imperial Stout", ibu: "45" }, 
+         { name: "Desperados", alcohol: "6%", style: "Lager", ibu: "20" }, 
+         { name: "Becks", alcohol: "5%", style: "Pilsen", ibu: "15" }
+      ];
+
+      // Função para renderizar a lista de objetos como uma tabela em um elemento com ID arbitrário
+      const carregarDiv = (
+         cs,
+         elementId = "cervejasDiv",
+         headers = { name: "Nome", alcohol: "Álcool", style: "Estilo", ibu: "Amargor" },
+         fields = ["name", "alcohol", "style", "ibu"]
+      ) => {
+         const div = document.getElementById(elementId);
+         if (!div) {
+            console.error(`Elemento com ID "${elementId}" não encontrado.`);
+            return;
+         }
+
+         // Início da tabela com cabeçalhos dinâmicos
+         let tabelaHtml = `
+            <table class="fundotb">
+               <thead>
+                  <tr>
+                     ${fields.map(field => `<th>${headers[field] || field}</th>`).join("")}
+                  </tr>
+               </thead>
+               <tbody>
+         `;
+
+         // Linhas da tabela, iterando dinamicamente sobre os campos especificados em 'fields'
+         tabelaHtml += cs.map(item => `
+            <tr>
+               ${fields.map(field => `<td>${item[field] || ""}</td>`).join("")}
+            </tr>
+         `).join("\n");
+
+         // Fechamento da tabela
+         tabelaHtml += `
+               </tbody>
+            </table>
+         `;
+
+         div.innerHTML = tabelaHtml;
+      }
+
+      document.getElementById("botaoCarregar").addEventListener("click", () => carregarDiv(cervejas));
+   </script>
+</html>

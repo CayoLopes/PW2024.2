@@ -1,0 +1,37 @@
+/* Estilo para a tabela de cervejas */
+table {
+    width: 40%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+ }
+ 
+ /* Estilo para o cabeçalho da tabela */
+ th {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+ }
+ 
+ /* Estilo para as células da tabela */
+ td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-weight: bold;
+ }
+ 
+ 
+ /* Efeito de hover nas linhas */
+ tbody tr:hover {
+    background-color: rgba(224, 224, 224, 0.6);
+
+
+ }
+ .fundotb{
+    background-image: url('https://imgs.search.brave.com/egYa4f0L8OX5NYcdl41PKiRLyxQufkDyZ8k4aTws5O8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTAx/NDY2OTI2L3B0L3Zl/dG9yaWFsLyVDMyVB/RGNvbmVzLWRlLWJl/YmlkYXMtZS1iZWJp/ZGFzLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1vMEpPYkJ4/OEU3Yk5Ca0VMZWFX/SzNoWl93UlNUSWRH/Rm9rdXFodUZyYjBR/PQ');
+    background-size: cover;
+    background-position: center;
+
+ }
+ 
