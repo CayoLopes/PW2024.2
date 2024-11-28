@@ -1,0 +1,55 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Botão */
+button {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e68a00;
+}
+
+/* Tabela */
+.tabela-generica {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.tabela-generica th,
+.tabela-generica td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.tabela-generica th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.tabela-generica tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabela-generica tr:hover {
+    background-color: #f1f1f1;
+}
