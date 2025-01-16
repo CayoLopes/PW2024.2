@@ -1,0 +1,23 @@
+/* Estilo para a tabela */
+table {
+    border-collapse: collapse;
+    width: 100%;
+ }
+ 
+ th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+ }
+ 
+ th {
+    background-color: #f2f2f2;
+    text-align: left;
+ }
+ 
+ /* Estilo para o título */
+ h1 {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+ }
+ 
