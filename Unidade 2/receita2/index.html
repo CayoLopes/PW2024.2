@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Dois</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app"></div>
+
+    <script src="libs/react.js"></script>
+    <script src="libs/react-dom.js"></script>
+    <script src="libs/babel.js"></script>
+
+    <script type="text/babel">
+        // Código React (igual ao exemplo anterior)
+        const bebidas = [
+            { nome: "Absinto", materiaPrima: "Artemisia absinthium", tradicionalidade: "Suíça", teor: "40% a 89%" },
+            { nome: "Cachaça", materiaPrima: "Cana-de-açúcar (garapa)", tradicionalidade: "Brasil", teor: "38% a 54%" },
+            { nome: "Gim", materiaPrima: "Cereais e zimbro", tradicionalidade: "Países Baixos", teor: "43% a 60%" },
+            { nome: "Rum", materiaPrima: "Cana-de-açúcar (melaço)", tradicionalidade: "Cuba", teor: "38% a 75%" },
+            { nome: "Whisky", materiaPrima: "Cereais (envelhecido)", tradicionalidade: "Escócia", teor: "38% a 54%" },
+            { nome: "Vodka", materiaPrima: "Cereais (filtrado)", tradicionalidade: "Rússia", teor: "35% a 60%" },
+            { nome: "Cerveja", materiaPrima: "Cereais (levedura)", tradicionalidade: "Baviera, Alemanha", teor: "2% a 20%" },
+            { nome: "Vinho", materiaPrima: "Uva", tradicionalidade: "Portugal", teor: "10% a 20%" },
+        ];
+
+        function Cabecalho() {
+            return <h1>Minha tabela de bebidas</h1>;
+        }
+
+        function TabelaBebidas() {
+            return (
+                <table id="tabela">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Matéria Prima</th>
+                            <th>Tradicionalidade</th>
+                            <th>Teor Alcoólico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {bebidas.map((bebida, index) => (
+                            <tr key={index}>
+                                <td>{bebida.nome}</td>
+                                <td>{bebida.materiaPrima}</td>
+                                <td>{bebida.tradicionalidade}</td>
+                                <td>{bebida.teor}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            );
+        }
+
+        function renderizarTabela() {
+            ReactDOM.render(
+                <div>
+                    <Cabecalho />
+                    <TabelaBebidas />
+                </div>,
+                document.getElementById("app")
+            );
+        }
+
+        ReactDOM.render(
+            <div>
+                <Cabecalho />
+                <button onClick={renderizarTabela}>Mostrar tabela</button>
+            </div>,
+            document.getElementById("app")
+        );
+    </script>
+</body>
+</html>
