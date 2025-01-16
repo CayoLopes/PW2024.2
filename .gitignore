@@ -1,1 +1,27 @@
 node_modules/
+
+# Arquivos de build gerados pelo Next.js
+.next/
+
+# Arquivos de log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de configuração de IDE
+.vscode/
+.idea/
+
+# Arquivos temporários criados por sistemas operacionais
+.DS_Store       # Para macOS
+Thumbs.db       # Para Windows
+
+# Arquivos de ambientes locais
+.env            # Variáveis de ambiente locais
+
+# Arquivos de cache do Next.js
+.cache/
+
+# Arquivos de lock (dependendo da ferramenta que você usa)
+package-lock.json # Se você usar Yarn, pode ignorar esse arquivo
+yarn.lock       # Se você usar npm, pode ignorar esse arquivo
