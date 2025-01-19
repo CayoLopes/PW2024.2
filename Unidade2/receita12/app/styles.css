@@ -1,0 +1,44 @@
+body {
+    background-color: #b6abbe; /* Cor de fundo para a página inteira */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.movie-item {
+    background-color: #2e0b50;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(124, 2, 2, 0.74);
+}
+
+.movie-poster {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.movie-details {
+    text-align: center;
+}
+
+.movie-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+.movie-year {
+    font-size: 14px;
+    color: #777;
+}
